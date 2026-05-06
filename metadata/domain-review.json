@@ -1,0 +1,73 @@
+{
+  "repo": "ledger-lang-parser-loom",
+  "language": "Julia",
+  "category": "Compilers",
+  "goal": "Create a Julia reference implementation for parser workflows, centered on policy evaluation, deny and allow fixtures, and explainable decision traces.",
+  "review_model": {
+    "terms": [
+      "IR pressure",
+      "lowering drift",
+      "stack depth",
+      "diagnostic reach"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "IR pressure",
+      "signal": 61,
+      "slack": 36,
+      "drag": 31,
+      "confidence": 61,
+      "score": 126,
+      "lane": "watch"
+    },
+    {
+      "name": "stress",
+      "focus": "lowering drift",
+      "signal": 76,
+      "slack": 23,
+      "drag": 15,
+      "confidence": 74,
+      "score": 204,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "stack depth",
+      "signal": 65,
+      "slack": 31,
+      "drag": 15,
+      "confidence": 77,
+      "score": 193,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "diagnostic reach",
+      "signal": 82,
+      "slack": 36,
+      "drag": 9,
+      "confidence": 53,
+      "score": 226,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "IR pressure",
+      "signal": 61,
+      "slack": 34,
+      "drag": 27,
+      "confidence": 47,
+      "score": 122,
+      "lane": "watch"
+    }
+  ]
+}
